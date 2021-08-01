@@ -1,4 +1,7 @@
 # 使用：
+- 下载代码： https://github.com/huangyangquang/npmEverydays/blob/master/2021%E5%B9%B4/7%E6%9C%88%E4%BB%BD/Joshua_qs
+- 执行node index.js, 查看输出结果
+
 ```
 var qs = require('qs');
 
@@ -383,3 +386,22 @@ var numeric = qs.stringify({ a: '☺' }, { charset: 'iso-8859-1' });
 console.log('numeric: ', numeric);
 ```
 
+
+# 社交信息 / Social Links:
+
+(Welcome to pay attention, 欢迎关注)
+
+Github：
+[@huangyangquang](https://github.com/huangyangquang) | [最新技术追踪](https://github.com/huangyangquang/Latest-technology-tracking) | [javascript版算法](https://github.com/huangyangquang/Algorithm) | [早期前端知识总结 + 案例](https://github.com/huangyangquang/DEMO) | 欢迎Star✨✨✨
+
+
+Social：
+[新浪微博](https://weibo.com/u/6385661354) | [知乎](https://www.zhihu.com/people/cclv3) | [掘金](https://juejin.cn/user/2735240661699181) | [思否](https://segmentfault.com/u/c_z7wgq/articles) 
+
+E-mail： fengquan.h@qq.com  
+
+Old Blog：[CSDN](https://blog.csdn.net/huangyangquan3?type=blog)
+
+微信公众号：前端学长Joshua  
+
+![微信公众号](../static/img/wechatQrCode.jpg)
