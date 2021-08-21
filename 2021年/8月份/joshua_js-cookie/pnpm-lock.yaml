@@ -1,0 +1,16 @@
+lockfileVersion: 5.3
+
+specifiers:
+  js-cookie: ^3.0.0
+
+dependencies:
+  js-cookie: registry.nlark.com/js-cookie/3.0.0
+
+packages:
+
+  registry.nlark.com/js-cookie/3.0.0:
+    resolution: {integrity: sha1-2xZh1UWZIOyVqvGGzPdM60pJUWQ=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/js-cookie/download/js-cookie-3.0.0.tgz}
+    name: js-cookie
+    version: 3.0.0
+    engines: {node: '>=12'}
+    dev: false
