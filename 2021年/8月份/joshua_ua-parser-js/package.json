@@ -1,0 +1,17 @@
+{
+  "name": "joshua_ua-parser",
+  "version": "1.0.0",
+  "description": "学习ua解析库：ua-parser-js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ua"
+  ],
+  "author": "前端学长Jooshua",
+  "license": "ISC",
+  "dependencies": {
+    "ua-parser-js": "^0.7.28"
+  }
+}

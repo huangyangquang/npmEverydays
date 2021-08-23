@@ -1,0 +1,15 @@
+lockfileVersion: 5.3
+
+specifiers:
+  ua-parser-js: ^0.7.28
+
+dependencies:
+  ua-parser-js: registry.nlark.com/ua-parser-js/0.7.28
+
+packages:
+
+  registry.nlark.com/ua-parser-js/0.7.28:
+    resolution: {integrity: sha1-i6BOZT81ziECOcZGYWhb+RId7DE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/ua-parser-js/download/ua-parser-js-0.7.28.tgz}
+    name: ua-parser-js
+    version: 0.7.28
+    dev: false
