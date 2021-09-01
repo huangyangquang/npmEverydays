@@ -24,6 +24,7 @@ hello, 大家好，我是 **前端学长Joshua (公众号)**。
     - [write (写)](#write-写)
   - [Q&A](#qa)
     - [如何将cookie的过期时间设置为在一天之内呢？](#如何将cookie的过期时间设置为在一天之内呢)
+  - [源码学习](#源码学习)
   - [社交信息 / Social Links](#社交信息--social-links)
 
 <!-- /TOC -->
@@ -262,6 +263,68 @@ Cookies.set('foo', 'bar', {
     expires: in30Minutes
 });
 ```
+
+## 源码学习
+在源码中，抽离出一个认为比较好的编码技巧，可以提高我们封装代码的灵活度：
+```
+function assign () { // 对象合并
+
+}
+
+var defaultConverter = { // 转换器（通用的工具函数， 同时可以由外界自定义）
+    write: function () {
+
+    },
+
+    read: function () {
+
+    }
+}
+
+var defaultAttributes = { // 默认参数
+
+}
+
+function init (defaultConverter, defaultAttributes) {
+    // 内部功能封装, 可以配合 转换器 + 参数 使用, 这样外部使用时，就会更加灵活
+    // 用户可以自己编写 转换器，可以传递自己的参数，进行自定义的操作
+    function set () {
+
+    }
+
+    function get () {
+
+    }
+    
+    // 导出一个新的对象
+    return Object.create({
+        set: set,
+        get: get,
+        remove: function () {
+
+        },
+        withAttributes: function (attributes) {
+            // 导出一个新的对象
+            return init(this.converter, assign({}, this.attributes, attributes))
+        },
+        withConverter: function (converter) {
+            // 导出一个新的对象
+            return init(assign({}, this.converter, converter), this.attributes)
+        }
+    }, {
+        // 默认的属性
+        attributes: { value: Object.freeze(defaultAttributes) },
+        converter: { value: Object.freeze(defaultConverter) }
+    })
+}
+
+var api = init(defaultConverter, defaultAttributes)
+
+modules.export = {
+    api
+}
+```
+
 
 ## 社交信息 / Social Links
 Github：
