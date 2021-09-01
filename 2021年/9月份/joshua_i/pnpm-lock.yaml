@@ -1,0 +1,16 @@
+lockfileVersion: 5.3
+
+specifiers:
+  i: ^0.3.6
+
+dependencies:
+  i: registry.nlark.com/i/0.3.6
+
+packages:
+
+  registry.nlark.com/i/0.3.6:
+    resolution: {integrity: sha1-2WyScyB28HJxG2sQ/X1PZa2O4j0=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/i/download/i-0.3.6.tgz}
+    name: i
+    version: 0.3.6
+    engines: {node: '>=0.4'}
+    dev: false
