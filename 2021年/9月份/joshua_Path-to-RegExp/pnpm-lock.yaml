@@ -1,0 +1,15 @@
+lockfileVersion: 5.3
+
+specifiers:
+  path-to-regexp: ^6.2.0
+
+dependencies:
+  path-to-regexp: registry.nlark.com/path-to-regexp/6.2.0
+
+packages:
+
+  registry.nlark.com/path-to-regexp/6.2.0:
+    resolution: {integrity: sha1-97OAMzYQTDRoia3s5hRmkjBkXzg=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/path-to-regexp/download/path-to-regexp-6.2.0.tgz?cache=0&sync_timestamp=1626769272334&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpath-to-regexp%2Fdownload%2Fpath-to-regexp-6.2.0.tgz}
+    name: path-to-regexp
+    version: 6.2.0
+    dev: false
