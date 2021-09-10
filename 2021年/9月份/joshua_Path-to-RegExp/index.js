@@ -10,17 +10,17 @@ var { pathToRegexp, match, parse, compile } = require("path-to-regexp");
 // console.log('==================================');
 
 // // 参数：
-var regexp = pathToRegexp('/:foo/:bar')
-console.log('regexp: ', regexp);
+// var regexp = pathToRegexp('/:foo/:bar')
+// console.log('regexp: ', regexp);
 
-var res = regexp.exec("/test/route");
-console.log('res: ', res);
+// var res = regexp.exec("/test/route");
+// console.log('res: ', res);
 
-var res = regexp.exec("/test");
-console.log('res: ', res);
+// var res = regexp.exec("/test");
+// console.log('res: ', res);
 
-var res = regexp.exec("/test/$$$");
-console.log('res: ', res);
+// var res = regexp.exec("/test/$$$");
+// console.log('res: ', res);
 
 // console.log('==================================');
 
@@ -87,7 +87,7 @@ console.log('res: ', res);
 // console.log('==================================');
 
 // // Parse:
-// var tokens = parse("/route/:foo/(.*)");
+// var tokens = parse("/route/:foo/125/:id");
 // console.log('tokens: ', tokens);
 
 // console.log('==================================');

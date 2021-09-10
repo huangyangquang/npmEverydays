@@ -1,6 +1,27 @@
 # Path-to-RegExp
 > 将诸如 /user/:name 之类的路径字符串 转换为 正则表达式。
 
+<!-- TOC -->
+
+- [Path-to-RegExp](#path-to-regexp)
+  - [安装](#安装)
+  - [使用](#使用)
+    - [exec()](#exec)
+    - [参数Parameters](#参数parameters)
+      - [命名参数Named Parameters](#命名参数named-parameters)
+      - [自定义匹配参数Custom Matching Parameters](#自定义匹配参数custom-matching-parameters)
+      - [自定义前缀和后缀Custom Prefix and Suffix](#自定义前缀和后缀custom-prefix-and-suffix)
+      - [未命名参数Unnamed Parameters](#未命名参数unnamed-parameters)
+      - [修饰符Modifiers](#修饰符modifiers)
+      - [可选参数 Optional](#可选参数-optional)
+      - [零个或多个参数匹配](#零个或多个参数匹配)
+      - [一个或多个参数匹配](#一个或多个参数匹配)
+    - [match()](#match)
+    - [parse()](#parse)
+    - [compile()](#compile)
+
+<!-- /TOC -->
+
 ## 安装
 ```
 npm install path-to-regexp --save
@@ -49,6 +70,10 @@ const regexp = pathToRegexp("/foo/:bar", keys);
 path-to-regexp 返回的 RegExp 用于有序数据（例如路径名、主机名）。  
 它不能处理任意排序的数据（例如查询字符串、URL 片段、JSON 等）  
 使用包含查询字符串的路径时，您需要转义问号 (?) ，以确保它不会将参数标记为可选。
+
+### exec()
+作用：匹配 url 地址与规则是否相符。
+返回值：配上规则就会返回一个数组，否则返回一个null
 
 ### 参数Parameters
 path 参数用于定义路径中参数的细节和需要填充键。
@@ -135,7 +160,104 @@ regexp.exec("/test/route");
 //=> [ '/test/route', 'test', 'route', index: 0, input: '/test/route', groups: undefined ]
 ```
 
+#### 零个或多个参数匹配
+```
+var regexp = pathToRegexp("/:foo*");
+console.log(regexp.exec("/"));
+console.log(regexp.exec("/bar/baz"));
 
+// [ '/', undefined, index: 0, input: '/', groups: undefined ]
+// [
+//   '/bar/baz',
+//   'bar/baz',
+//   index: 0,
+//   input: '/bar/baz',
+//   groups: undefined
+// ]
+```
+
+
+#### 一个或多个参数匹配
+```
+var regexp = pathToRegexp("/:foo+");
+console.log(regexp.exec("/"));
+console.log(regexp.exec("/bar/baz"));
+
+// null
+// [
+//   '/bar/baz',
+//   'bar/baz',
+//   index: 0,
+//   input: '/bar/baz',
+//   groups: undefined
+// ]
+```
+
+### match()
+```
+var Res = match("/user/:id", { decode: decodeURIComponent });
+console.log(Res("/user/123"));
+console.log(Res("/invalid"));
+console.log(Res("/user/caf%C3%A9"));
+
+var match = match("/café", { encode: encodeURI, decode: decodeURIComponent });
+console.log('match:', match("/user/caf%C3%A9"));
+
+打印结果：
+{
+  path: '/user/123',
+  index: 0,
+  params: [Object: null prototype] { id: '123' }
+}
+false
+{
+  path: '/user/caf%C3%A9',
+  index: 0,
+  params: [Object: null prototype] { id: 'café' }
+}
+match: false
+
+```
+
+###  parse()
+作用：解析 url 字符串中的参数部分（比如：:id）
+```
+var tokens = parse("/route/:foo/125/:id");
+console.log('tokens: ', tokens);
+
+结果：
+tokens:  [
+  '/route',
+  {
+    name: 'foo',
+    prefix: '/',
+    suffix: '',
+    pattern: '[^\\/#\\?]+?',
+    modifier: ''
+  },
+  '/125',
+  {
+    name: 'id',
+    prefix: '/',
+    suffix: '',
+    pattern: '[^\\/#\\?]+?',
+    modifier: ''
+  }
+]
+
+```
+
+### compile()
+作用：快速填充 url 字符串的参数值。
+```
+var pathToRegexp = require('path-to-regexp')
+
+var url = '/user/:id/:name'
+var data = {id: 10001, name: 'bob'}
+console.log(pathToRegexp.compile(url)(data))
+
+// /user/10001/bob
+```
 
 
 
