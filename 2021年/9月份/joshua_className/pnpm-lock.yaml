@@ -1,0 +1,13 @@
+lockfileVersion: 5.3
+
+specifiers:
+  classnames: ^2.3.1
+
+dependencies:
+  classnames: 2.3.1
+
+packages:
+
+  /classnames/2.3.1:
+    resolution: {integrity: sha1-38+jiR4wbsHa0QXQ6I9EF7hTXo4=, tarball: classnames/download/classnames-2.3.1.tgz}
+    dev: false
