@@ -10,3 +10,4 @@
 - [ua-parser-js](https://www.npmjs.com/package/ua-parser-js): 该库用于从 User-Agent(用户代理数据)中解析出浏览器、引擎、操作系统、CPU 和设备类型/模型等相关的设备信息
 - [Path-to-RegExp](https://www.npmjs.com/package/path-to-regexp): 将诸如 /user/:name 之类的路径字符串 转换为 正则表达式。可以用来处理 url 中地址与参数，能够很方便得到我们想要的数据
 - [i](https://www.npmjs.com/package/i):  这个工具包可以用来改变字符串的格式，比如：单复数、驼峰命名、外键格式等写法
+- [classnames](https://www.npmjs.com/package/classnames): 这个工具库，可以有效的将我们需要使用到的类名给组织在一起
