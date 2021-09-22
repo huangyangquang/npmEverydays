@@ -1,0 +1,16 @@
+lockfileVersion: 5.3
+
+specifiers:
+  await-to-js: ^3.0.0
+
+dependencies:
+  await-to-js: registry.npmmirror.com/await-to-js/3.0.0
+
+packages:
+
+  registry.npmmirror.com/await-to-js/3.0.0:
+    resolution: {integrity: sha1-cJKZlBhWFvRnWpGvYWfrYcySho8=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/await-to-js/download/await-to-js-3.0.0.tgz}
+    name: await-to-js
+    version: 3.0.0
+    engines: {node: '>=6.0.0'}
+    dev: false
